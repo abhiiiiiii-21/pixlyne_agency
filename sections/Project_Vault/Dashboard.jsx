@@ -5,6 +5,7 @@ import useTabStore from '@/Tabstore/tabstore'
 import Webdev from './Webdev'
 import Posters from './Posters'
 import Thumbnail from './Thumbnail'
+import LongForm from './LongForm'
 
 const Dashboard = () => {
     const { currentTab } = useTabStore()
@@ -16,7 +17,7 @@ const Dashboard = () => {
             case 2:
                 return <div>Home 2</div>
             case 3:
-                return <div>Home 3</div>
+                return <LongForm/>
             case 4:
                 return <Thumbnail/>
             case 5:
@@ -31,13 +32,11 @@ const Dashboard = () => {
             <SidebarMain>
                 <div className="flex flex-1">
                     <div
-                        className="flex h-full w-full flex-1 flex-col rounded-r-md gap-2 p-2 md:p-10 overflow-y-auto"
+                        className="relative flex h-full w-full flex-1 flex-col rounded-r-md gap-2 p-2 md:p-10 overflow-y-auto"
                     >
                         {renderContent()}
                     </div>
                 </div>
-
-
             </SidebarMain>
         </div>
     )

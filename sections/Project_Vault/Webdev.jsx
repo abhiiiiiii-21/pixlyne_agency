@@ -1,6 +1,7 @@
-import { web_development } from '@/data/Web Development/webdev'
+// import { web_development } from '@/data/WebDevelopment/webdev'
 import React, { useRef } from 'react'
 import { CircleChevronRight } from 'lucide-react'
+import { web_development } from '@/data/WebDevelopment/webdev'
 
 const Webdev = () => {
   return (
