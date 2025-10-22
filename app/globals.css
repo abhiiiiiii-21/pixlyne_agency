@@ -41,6 +41,23 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+  --animate-rippling: rippling var(--duration) ease-out;
+  @keyframes rippling {
+  0% {
+    opacity: 1;
+    }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+    }
+  }
+  --radius-none: 0px;
+  --radius-xs: 0.125rem;
+  --radius-default: 0.375rem;
+  --radius-2xl: 1.5rem;
+  --radius-3xl: 1.875rem;
+  --radius-full: 9999px;
+  --color-button-ripple-color: var(----button-ripple-color)
 }
 
 :root {
@@ -76,6 +93,8 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+  --button-ripple-color: oklch(0.145 0 0 / 0.3);
+  --font-raleway: 'Raleway', sans-serif;
 }
 
 .dark {
@@ -110,6 +129,7 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+  --button-ripple-color: oklch(0.985 0 0 / 0.5);
 }
 
 @layer base {
@@ -119,4 +139,8 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+.font-raleway {
+  font-family: var(--font-raleway);
 }
