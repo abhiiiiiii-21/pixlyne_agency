@@ -87,7 +87,7 @@ export const DesktopSidebar = ({ className, children, ...props }) => {
     <>
       <motion.div
         className={cn(
-          "h-full px-4 py-4 m-3 hidden rounded-md border border-neutral-900 md:flex md:flex-col bg-[#0E0E0E] w-[300px] shrink-0",
+          "h-[96%] px-4 py-4 m-3 hidden rounded-md border border-neutral-900 md:flex md:flex-col bg-[#0E0E0E] w-[300px] shrink-0",
           className
         )}
         // --- 3. ADD: Added the load animation props ---

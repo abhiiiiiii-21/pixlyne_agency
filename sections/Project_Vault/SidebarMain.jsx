@@ -60,11 +60,11 @@ export function SidebarMain({ children }) {
     <div
       className={cn(
         "mx-auto flex w-full max-w-7xl flex-1 flex-col rounded-lg border md:flex-row border-neutral-800 bg-black", // <-- FIX: Removed 'overflow-hidden'
-        "h-[90vh]"
+        "h-[75vh]"
       )}
     >
       <Sidebar open={open} setOpen={setOpen}>
-        <SidebarBody className="justify-between gap-10">
+        <SidebarBody className="justify-between  gap-10">
           <div className="flex flex-1 flex-col overflow-x-hidden overflow-y-auto">
             {open ? <Logo /> : <LogoIcon />}
             <div className="mt-8 flex flex-col gap-2">

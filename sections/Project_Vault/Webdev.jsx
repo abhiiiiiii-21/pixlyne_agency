@@ -71,7 +71,8 @@ const Webdev = () => {
       variants={containerVariants}
       initial="hidden"
       whileInView="visible"
-      viewport={{  amount: 0.1 }} // Animation triggers once when 10% of the container is visible
+      viewport={{ amount: 0.1, once: true }}
+ // Animation triggers once when 10% of the container is visible
     >
       {web_development.map(({ title, video, websiteLink, thumbnail }, index) => {
         const videoRef = useRef(null)
