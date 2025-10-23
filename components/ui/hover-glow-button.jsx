@@ -8,7 +8,8 @@ const HoverButton = ({
   glowColor = '#00ffc3',
   backgroundColor = '#111827', // gray-900 equivalent
   textColor = '#ffffff',
-  hoverTextColor = '#67e8f9' // cyan-300 equivalent
+  hoverTextColor = '#67e8f9', // cyan-300 equivalent
+  ...props
 }) => {
   const buttonRef = useRef(null);
   const [glowPosition, setGlowPosition] = useState({ x: 50, y: 50 });
@@ -33,6 +34,7 @@ const HoverButton = ({
 
   return (
     <button
+    {...props}
       ref={buttonRef}
       onClick={onClick}
       disabled={disabled}
