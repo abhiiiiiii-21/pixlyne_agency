@@ -9,13 +9,13 @@ import {
 } from "@tabler/icons-react";
 import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
-import { Sidebar,SidebarBody, SidebarLink  } from "@/components/ui/sidebar";
+import { Sidebar, SidebarBody, SidebarLink } from "@/components/ui/sidebar";
 
-export function SidebarMain({children}) {
+export function SidebarMain({ children }) {
   const links = [
     {
       label: "Web Development",
-      tab:1,
+      tab: 1,
       href: "",
       icon: (
         <IconBrandTabler className="h-5 w-5 shrink-0 text-neutral-700 dark:text-neutral-200" />
@@ -24,7 +24,7 @@ export function SidebarMain({children}) {
     {
       label: "Short Videos",
       href: "#",
-      tab:2,
+      tab: 2,
       icon: (
         <IconUserBolt className="h-5 w-5 shrink-0 text-neutral-700 dark:text-neutral-200" />
       ),
@@ -32,7 +32,7 @@ export function SidebarMain({children}) {
     {
       label: "Long Videos",
       href: "#",
-      tab:3,
+      tab: 3,
       icon: (
         <IconSettings className="h-5 w-5 shrink-0 text-neutral-700 dark:text-neutral-200" />
       ),
@@ -40,7 +40,7 @@ export function SidebarMain({children}) {
     {
       label: "Youtube Thumbnails",
       href: "#",
-      tab:4,
+      tab: 4,
       icon: (
         <IconArrowLeft className="h-5 w-5 shrink-0 text-neutral-700 dark:text-neutral-200" />
       ),
@@ -48,7 +48,7 @@ export function SidebarMain({children}) {
     {
       label: "Posters",
       href: "#",
-      tab:5,
+      tab: 5,
       icon: (
         <IconArrowLeft className="h-5 w-5 shrink-0 text-neutral-700 dark:text-neutral-200" />
       ),
@@ -56,19 +56,20 @@ export function SidebarMain({children}) {
   ];
   const [open, setOpen] = useState(false);
   return (
+
     <div
       className={cn(
-        "mx-auto flex w-full max-w-7xl flex-1 flex-col overflow-hidden rounded-lg border md:flex-row border-neutral-800 bg-black",
-        // for your use case, use `h-screen` instead of `h-[60vh]`
-        "h-[80vh]"
-      )}>
+        "mx-auto flex w-full max-w-7xl flex-1 flex-col rounded-lg border md:flex-row border-neutral-800 bg-black", // <-- FIX: Removed 'overflow-hidden'
+        "h-[90vh]"
+      )}
+    >
       <Sidebar open={open} setOpen={setOpen}>
         <SidebarBody className="justify-between gap-10">
           <div className="flex flex-1 flex-col overflow-x-hidden overflow-y-auto">
             {open ? <Logo /> : <LogoIcon />}
             <div className="mt-8 flex flex-col gap-2">
               {links.map((link, idx) => (
-                <SidebarLink  key={idx} link={link} />
+                <SidebarLink key={idx} link={link} />
               ))}
             </div>
           </div>
@@ -118,30 +119,5 @@ export const LogoIcon = () => {
       <div
         className="h-5 w-6 shrink-0 rounded-tl-lg rounded-tr-sm rounded-br-lg rounded-bl-sm bg-white" />
     </a>
-  );
-};
-
-// Dummy dashboard component with content
-const Dashboard = () => {
-  return (
-    <div className="flex flex-1">
-      <div
-        className="flex h-full w-full flex-1 flex-col gap-2 rounded-tl-2xl border p-2 md:p-10 border-neutral-700 bg-neutral-900">
-        <div className="flex gap-2">
-          {[...new Array(4)].map((i, idx) => (
-            <div
-              key={"first-array-demo-1" + idx}
-              className="h-20 w-full animate-pulse rounded-lg bg-gray-100 dark:bg-neutral-800"></div>
-          ))}
-        </div>
-        <div className="flex flex-1 gap-2">
-          {[...new Array(2)].map((i, idx) => (
-            <div
-              key={"second-array-demo-1" + idx}
-              className="h-full w-full animate-pulse rounded-lg bg-gray-100 dark:bg-neutral-800"></div>
-          ))}
-        </div>
-      </div>
-    </div>
   );
 };

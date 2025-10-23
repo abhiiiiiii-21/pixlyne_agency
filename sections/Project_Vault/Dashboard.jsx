@@ -1,5 +1,5 @@
 "use client"
-import React from 'react'
+import React, { useRef } from 'react'
 import { SidebarMain } from './SidebarMain'
 import useTabStore from '@/Tabstore/tabstore'
 import Webdev from './Webdev'
@@ -7,10 +7,11 @@ import Posters from './Posters'
 import Thumbnail from './Thumbnail'
 import LongForm from './LongForm'
 import { WorkBadge } from './WorkBadge'
+import { motion, useScroll, useTransform } from 'framer-motion'
 
 const Dashboard = () => {
     const { currentTab } = useTabStore()
-
+  
     const renderContent = () => {
         switch (currentTab) {
             case 1:
@@ -42,16 +43,20 @@ const Dashboard = () => {
                 </p>
             </div>
             
+            <motion.div 
+            
 
-            <SidebarMain>
-                <div className="flex flex-1">
-                    <div
-                        className="relative flex h-full w-full flex-1 flex-col rounded-r-md gap-2 p-2 md:p-10 overflow-y-auto"
-                    >
-                        {renderContent()}
+            >
+                <SidebarMain>
+                    <div className="flex flex-1 h-full">
+                        <div
+                            className="relative flex w-full flex-1 flex-col rounded-r-md gap-2 p-2 md:p-10 overflow-y-auto"
+                        >
+                            {renderContent()}
+                        </div>
                     </div>
-                </div>
-            </SidebarMain>
+                </SidebarMain>
+            </motion.div>
         </div>
     )
 }

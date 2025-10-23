@@ -5,6 +5,32 @@ import { AnimatePresence, motion } from "motion/react";
 import { IconMenu2, IconX } from "@tabler/icons-react";
 import useTabStore from "@/Tabstore/tabstore";
 
+
+const sidebarLoadVariants = {
+  hidden: {
+    opacity: 0,
+    scale: 1.05,
+    y: 0,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: [1.05, 1, 1.07, 1],
+    boxShadow: [
+      "0 0 0px 0px rgba(0,0,0,0)",         // 1. Start (at 1.5): No shadow
+      "0 0 1px 1px rgba(255,222,173,0.6)", // 2. Midway (at 1): Strong shadow
+      "0 0 0px 0px  rgba(0,0,0,0) ",       // 3. Midway (at 1.5): Medium shadow
+      "0 0 0px 0px rgba(0,0,0,0)",       // 4. End (at 1): No shadow
+    ],
+    transition: {
+      opacity: { type: "spring", damping: 10, stiffness: 100, mass: 0.8 },
+      y: { type: "spring", damping: 10, stiffness: 100, mass: 0.8 },
+      scale: { duration: 3, ease: "easeInOut", times: [0, 0.33, 0.6, 1] },
+      boxShadow: { duration: 3, ease: "easeInOut", times: [0, 0.33, 0.6, 1] },
+    },
+  },
+};
+
 const SidebarContext = createContext(undefined);
 
 export const useSidebar = () => {
@@ -55,11 +81,7 @@ export const SidebarBody = (props) => {
   );
 };
 
-export const DesktopSidebar = ({
-  className,
-  children,
-  ...props
-}) => {
+export const DesktopSidebar = ({ className, children, ...props }) => {
   const { open, setOpen, animate } = useSidebar();
   return (
     <>
@@ -68,18 +90,27 @@ export const DesktopSidebar = ({
           "h-full px-4 py-4 m-3 hidden rounded-md border border-neutral-900 md:flex md:flex-col bg-[#0E0E0E] w-[300px] shrink-0",
           className
         )}
+        // --- 3. ADD: Added the load animation props ---
+        // These control the 4-step scale/shadow animation
+        variants={sidebarLoadVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.1 }}
+        // ---------------------------------------------
+        // This existing prop for width animation still works!
+        // The animations don't conflict because they control different properties.
         animate={{
           width: animate ? (open ? "300px" : "60px") : "300px",
         }}
         onMouseEnter={() => setOpen(true)}
         onMouseLeave={() => setOpen(false)}
-        {...props}>
+        {...props}
+      >
         {children}
       </motion.div>
     </>
   );
 };
-
 export const MobileSidebar = ({
   className,
   children,
@@ -126,27 +157,26 @@ export const MobileSidebar = ({
   );
 };
 
-export const SidebarLink = ({
-  link,
-  className,
-  ...props
-}) => {
+export const SidebarLink = ({ link, className, ...props }) => {
   const { open, animate } = useSidebar();
-  const {  setCurrentTab } = useTabStore()
+  const { setCurrentTab } = useTabStore()
   return (
-    <div
+    // --- 4. FIX: Changed 'div' to 'motion.div' so it can animate
+    <motion.div
       className={cn("flex items-center justify-start gap-2  cursor-pointer group/sidebar py-2", className)}
-      {...props}>
+      {...props}
+    >
       {link.icon}
-      <div
-      onClick={() => setCurrentTab(link.tab)}
+      <motion.div // This also needs to be a motion component
+        onClick={() => setCurrentTab(link.tab)}
+        // The animate prop now correctly controls this motion.div
         animate={{
           display: animate ? (open ? "inline-block" : "none") : "inline-block",
           opacity: animate ? (open ? 1 : 0) : 1,
         }}
         className="text-neutral-200 text-sm group-hover/sidebar:translate-x-1 transition duration-150 whitespace-pre inline-block !p-0 !m-0">
         {link.label}
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 };
