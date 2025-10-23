@@ -6,6 +6,7 @@ import Webdev from './Webdev'
 import Posters from './Posters'
 import Thumbnail from './Thumbnail'
 import LongForm from './LongForm'
+import { WorkBadge } from './WorkBadge'
 
 const Dashboard = () => {
     const { currentTab } = useTabStore()
@@ -17,18 +18,31 @@ const Dashboard = () => {
             case 2:
                 return <div>Home 2</div>
             case 3:
-                return <LongForm/>
+                return <LongForm />
             case 4:
-                return <Thumbnail/>
+                return <Thumbnail />
             case 5:
-                return <Posters/>
+                return <Posters />
             default:
                 return <div>Welcome</div>
         }
     }
 
     return (
-        <div className='mt-64'>
+        <div className='mt-25'>
+
+            <WorkBadge />
+
+            <div className="mb-20 font-raleway flex flex-col items-center text-center justify-center gap-3 tracking-tight leading-none">
+                <p className="text-neutral-200 text-5xl font-medium">
+                    Crafted with <span className="font-instrument-serif italic text-blue-500">Precision</span>
+                </p>
+                <p className="text-neutral-500">
+                    Each project reflects our commitment to clean design, bold ideas, and seamless execution.
+                </p>
+            </div>
+            
+
             <SidebarMain>
                 <div className="flex flex-1">
                     <div

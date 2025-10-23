@@ -55,12 +55,19 @@ const Hero = () => {
                 </div>
 
                 {/* Section 2: Headline */}
-                <div className="text-neutral-300 flex flex-col items-center gap-5">
-                    <div className="flex flex-col -space-y-5 items-center">
-                        <p className="font-raleway text-8xl font-medium leading-tight">Shaping Brands With</p>
-                        <p className="font-raleway text-8xl font-medium leading-tight">Every Frame</p>
-                    </div>
+                <div className="flex flex-col items-center space-y-1 text-neutral-300">
+                    <h1 className="font-medium text-center font-raleway">
+                        <span className="block text-8xl tracking-tight leading-none">
+                            Shaping{' '}
+                            <span className="italic text-blue-500 font-instrument-serif">Brands</span>
+                        </span>
+                        <span className="block text-8xl tracking-tight leading-none mt-2">
+                            With Every{' '}
+                            <span className="italic text-blue-500 font-instrument-serif">Frame</span>
+                        </span>
+                    </h1>
                 </div>
+
 
 
                 <div className="mt-20 flex flex-col items-center font-raleway">

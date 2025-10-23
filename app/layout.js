@@ -1,10 +1,17 @@
-import { Raleway } from 'next/font/google'
+import { Raleway, Instrument_Serif } from 'next/font/google'
 import "./globals.css";
 
 const raleway = Raleway({
   subsets: ['latin'],
   weight: ['100', '200', '300', '400', '500', '600', '700'],
   variable: '--font-raleway',
+})
+
+const instrumentSerif = Instrument_Serif({
+  subsets: ['latin'],
+  weight: ['400'],
+  style: ['normal', 'italic'],
+  variable: '--font-instrument-serif',
 })
 
 
@@ -17,7 +24,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${raleway.variable} bg-black antialiased`}
+        className={`${raleway.variable} ${instrumentSerif.variable} bg-black antialiased`}
       >
         {children}
       </body>
