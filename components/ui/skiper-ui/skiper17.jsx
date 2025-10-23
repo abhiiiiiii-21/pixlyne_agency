@@ -1,11 +1,9 @@
 "use client";
 
-import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import ReactLenis from "lenis/react";
-import { useRef } from "react";
-
+import { useRef, useEffect } from "react";
 import { cn } from "@/lib/utils";
 
 // StickyCard002 Component
@@ -13,7 +11,7 @@ const StickyCard002 = ({ cards, className, containerClassName, imageClassName })
   const container = useRef(null);
   const imageRefs = useRef([]);
 
-  useGSAP(() => {
+  useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
     const imageElements = imageRefs.current;
@@ -61,7 +59,7 @@ const StickyCard002 = ({ cards, className, containerClassName, imageClassName })
       scrollTimeline.kill();
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     };
-  }, { scope: container });
+  }, []);
 
   return (
     <div className={cn("relative h-full w-full bg-black", className)} ref={container}>

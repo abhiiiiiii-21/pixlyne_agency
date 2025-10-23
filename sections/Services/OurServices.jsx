@@ -56,4 +56,5 @@ const WhyChooseStructure = () => {
 
   );
 };
+
 export default WhyChooseStructure;
