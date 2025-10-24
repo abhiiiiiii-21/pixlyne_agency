@@ -34,7 +34,7 @@ const WhyChooseStructure = () => {
   ];
 
   return (
-    <div className="h-screen w-full bg-black mt-35">
+    <div className="h-screen w-full bg-black mt-35 mb-35">
       <OurServicesBadge />
 
       <div className="mb-6 font-raleway flex flex-col items-center text-center justify-center gap-3 tracking-tight leading-none">
