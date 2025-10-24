@@ -4,7 +4,7 @@ import ComparisonTable from './ComparisonTable'
 
 const Comparison = () => {
   return (
-    <div className='mt-30'>
+    <div className='mt-30 mb-30'>
       <ComparisonBadge />
 
       <div className="mb-6 font-raleway flex flex-col items-center text-center justify-center gap-3 tracking-tight leading-none">

@@ -11,7 +11,7 @@ import { motion, useScroll, useTransform } from 'framer-motion'
 
 const Dashboard = () => {
     const { currentTab } = useTabStore()
-  
+
     const renderContent = () => {
         switch (currentTab) {
             case 1:
@@ -42,21 +42,17 @@ const Dashboard = () => {
                     Each project reflects our commitment to clean design, bold ideas, and seamless execution.
                 </p>
             </div>
-            
-            <motion.div 
-            
 
-            >
-                <SidebarMain>
-                    <div className="flex flex-1 h-full">
-                        <div
-                            className="relative flex w-full flex-1 flex-col rounded-r-md gap-2 p-2 md:p-10 overflow-y-auto"
-                        >
-                            {renderContent()}
-                        </div>
+            <SidebarMain>
+                <div className="flex flex-1 h-full">
+                    <div
+                        className="relative flex w-full flex-1 flex-col rounded-r-md gap-2 p-2 md:p-10 overflow-y-auto"
+                    >
+                        {renderContent()}
                     </div>
-                </SidebarMain>
-            </motion.div>
+                </div>
+            </SidebarMain>
+
         </div>
     )
 }
