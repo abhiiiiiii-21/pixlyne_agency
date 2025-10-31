@@ -18,7 +18,7 @@ const page = () => {
       <OurServices/>
       <Dashboard/>
       <Comparison/>
-      <FloatingBookACall/>
+      {/* <FloatingBookACall/> */}
       <Footer/>
     </div>
   );

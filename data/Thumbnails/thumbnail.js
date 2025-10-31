@@ -1,19 +1,15 @@
 export const thumbnail = [
   {
-    "title": "Haven",
-    "thumbnail": "/Vault/Thumbnail/Project_2.jpg",
+    "title": "Partition",
+    "thumbnail": "/Vault/Thumbnail/1.jpg",
   },
   {
-    "title": "Amazon Clone",
-    "thumbnail": "/Vault/Thumbnail/Project_2.jpg",
+    "title": "Why is it Legal ?",
+    "thumbnail": "/Vault/Thumbnail/2.jpg",
   },
   {
-    "title": "Spotify Clone",
-    "thumbnail": "/Vault/Thumbnail/Project_2.jpg",
+    "title": "GTA Live",
+    "thumbnail": "/Vault/Thumbnail/3.jpg",
 
-  },
-  {
-    "title": "Portfolio Website",
-    "thumbnail": "/Vault/Thumbnail/Project_2.jpg",
   }
 ]

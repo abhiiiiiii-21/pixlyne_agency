@@ -1,9 +1,9 @@
 export const web_development = [
   {
     "title": "Haven",
-    "thumbnail": "/Vault/Web_Dev/project_2.jpg",
+    "thumbnail": "/Vault/Web_Dev/Haven.png",
     "video": "/Vault/Web_Dev/01  Orientation Session.mp4",
-    "websiteLink": "https://netflix-clone.example.com"
+    "websiteLink": "https://haven.singles"
   },
   {
     "title": "Amazon Clone",
@@ -12,33 +12,10 @@ export const web_development = [
     "websiteLink": "https://amazon-clone.example.com"
   },
   {
-    "title": "Spotify Clone",
-    "thumbnail": "/Vault/Web_Dev/project_2.jpg",
+    "title": "Gainly",
+    "thumbnail": "/Vault/Web_Dev/Gainly.png",
+  
     "video": "/Vault/Web_Dev/01  Orientation Session.mp4",
-    "websiteLink": "https://spotify-clone.example.com"
-  },
-  {
-    "title": "Portfolio Website",
-    "thumbnail": "/Vault/Web_Dev/project_2.jpg",
-    "video": "/Vault/Web_Dev/01  Orientation Session.mp4",
-    "websiteLink": "https://portfolio.example.com"
-  },
-  {
-    "title": "Amazon Clone",
-    "thumbnail": "/Vault/Web_Dev/project_2.jpg",
-    "video": "/Vault/Web_Dev/01  Orientation Session.mp4",
-    "websiteLink": "https://amazon-clone.example.com"
-  },
-  {
-    "title": "Spotify Clone",
-    "thumbnail": "/Vault/Web_Dev/project_2.jpg",
-    "video": "/Vault/Web_Dev/01  Orientation Session.mp4",
-    "websiteLink": "https://spotify-clone.example.com"
-  },
-  {
-    "title": "Portfolio Website",
-    "thumbnail": "/Vault/Web_Dev/project_2.jpg",
-    "video": "/Vault/Web_Dev/01  Orientation Session.mp4",
-    "websiteLink": "https://portfolio.example.com"
-  },
+    "websiteLink": "https://gainly-personal-finance.vercel.app/"
+  }
 ]

@@ -10,7 +10,7 @@ const OurServices = () => {
   const customCards = [
     {
       id: "project-1",
-      image: "/Services/Web_Development.jpg",
+      image: "/Services/Web_Development.png",
       alt: "Web Development",
     },
     {
@@ -45,7 +45,7 @@ const OurServices = () => {
 
       <div className="mb-6 font-raleway flex flex-col items-center text-center justify-center gap-3 tracking-tight leading-none">
         <p className="text-neutral-200 text-5xl font-medium">What We
-          <span className="font-instrument-serif italic text-blue-500"> Offer</span>
+          <span className="font-instrument-serif italic text-[#0055FE]"> Offer</span>
         </p>
         <p className="text-neutral-500">From web development to visual storytelling, we craft work that matters.</p>
       </div>

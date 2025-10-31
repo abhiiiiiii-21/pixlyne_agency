@@ -159,22 +159,39 @@ export const MobileSidebar = ({
 
 export const SidebarLink = ({ link, className, ...props }) => {
   const { open, animate } = useSidebar();
-  const { setCurrentTab } = useTabStore()
+  const { currentTab, setCurrentTab } = useTabStore();
+
+  const isActive = currentTab === link.tab;
+
   return (
-    // --- 4. FIX: Changed 'div' to 'motion.div' so it can animate
     <motion.div
-      className={cn("flex items-center justify-start gap-2  cursor-pointer group/sidebar py-2", className)}
+      className={cn(
+        "flex items-center justify-start gap-2 cursor-pointer group/sidebar py-2 px-2 transition-colors duration-200",
+        className
+      )}
+      onClick={() => setCurrentTab(link.tab)}
       {...props}
     >
-      {link.icon}
-      <motion.div // This also needs to be a motion component
-        onClick={() => setCurrentTab(link.tab)}
-        // The animate prop now correctly controls this motion.div
+      {/* Icon color change */}
+      <motion.div
+        animate={{
+          color: isActive ? "#0055FE" : "#D1D5DB",
+        }}
+        transition={{ duration: 0.3 }}
+      >
+        {link.icon}
+      </motion.div>
+
+      {/* Label animation with color change */}
+      <motion.div
         animate={{
           display: animate ? (open ? "inline-block" : "none") : "inline-block",
           opacity: animate ? (open ? 1 : 0) : 1,
+          color: isActive ? "#0055FE" : "#D1D5DB",
         }}
-        className="text-neutral-200 text-sm group-hover/sidebar:translate-x-1 transition duration-150 whitespace-pre inline-block !p-0 !m-0">
+        transition={{ duration: 0.3 }}
+        className="text-sm group-hover/sidebar:translate-x-1 transition duration-150 whitespace-pre inline-block !p-0 !m-0"
+      >
         {link.label}
       </motion.div>
     </motion.div>

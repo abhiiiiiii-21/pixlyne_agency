@@ -8,6 +8,7 @@ import Thumbnail from './Thumbnail'
 import LongForm from './LongForm'
 import { WorkBadge } from './WorkBadge'
 import { motion, useScroll, useTransform } from 'framer-motion'
+import Reels from './Reels'
 
 const Dashboard = () => {
     const { currentTab } = useTabStore()
@@ -17,7 +18,7 @@ const Dashboard = () => {
             case 1:
                 return <Webdev />
             case 2:
-                return <div>Home 2</div>
+                return <Reels/>
             case 3:
                 return <LongForm />
             case 4:
@@ -30,13 +31,13 @@ const Dashboard = () => {
     }
 
     return (
-        <div className='mt-25'>
+        <div>
 
             <WorkBadge />
 
             <div className="mb-20 font-raleway flex flex-col items-center text-center justify-center gap-3 tracking-tight leading-none">
                 <p className="text-neutral-200 text-5xl font-medium">
-                    Crafted with <span className="font-instrument-serif italic text-blue-500">Precision</span>
+                    Crafted with <span className="font-instrument-serif italic text-[#0055FE]">Precision</span>
                 </p>
                 <p className="text-neutral-500">
                     Each project reflects our commitment to clean design, bold ideas, and seamless execution.

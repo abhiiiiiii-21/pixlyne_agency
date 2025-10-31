@@ -22,7 +22,7 @@ export default function ComparisonTable() {
 
   return (
     <section className="relative flex flex-col items-center justify-center py-15 px-6 bg-gradient-to-b from-[#050505] via-[#0b0b0b] to-[#050505] text-white overflow-hidden">
-      {/* Headings */}
+      {/* Headings (No changes) */}
       <div className="grid md:grid-cols-2 gap-10 w-full max-w-6xl mb-10 text-center">
         <div className="flex flex-row items-center justify-center gap-2">
           <img
@@ -44,15 +44,24 @@ export default function ComparisonTable() {
 
       {/* Comparison Boxes */}
       <div className="grid md:grid-cols-2 gap-8 w-full max-w-6xl font-raleway">
-        {/* PixLyne Column */}
-        <div className="rounded-2xl border border-blue-500/20 bg-gradient-to-b from-blue-950/30 via-blue-900/10 to-transparent backdrop-blur-xl shadow-[0_0_40px_rgba(37,99,235,0.12)] transition-all duration-500 hover:shadow-[0_0_55px_rgba(37,99,235,0.18)]">
+        {/* PixLyne Column (No changes to this parent div) */}
+        <div
+          className="
+            rounded-2xl border border-blue-500/20 
+            bg-gradient-to-b from-blue-950/30 via-blue-900/10 to-transparent 
+            shadow-[0_0_40px_rgba(37,99,235,0.12)] 
+            transition-transform duration-500 ease-in-out
+            hover:scale-[1.02]
+          "
+        >
           <div className="divide-y divide-blue-500/10">
             {pixlynePoints.map((point, index) => (
               <div
                 key={index}
                 className={`
-                  flex items-center gap-3 px-8 py-5 transition-all duration-400 ease-out
+                  flex items-center gap-3 px-8 py-5 
                   hover:bg-blue-500/10
+                  {/* REMOVED: transition-colors duration-400 ease-out */}
                   ${index === 0 ? "rounded-t-2xl" : ""}
                   ${index === pixlynePoints.length - 1 ? "rounded-b-2xl" : ""}
                 `}
@@ -64,15 +73,24 @@ export default function ComparisonTable() {
           </div>
         </div>
 
-        {/* Others Column */}
-        <div className="rounded-2xl border border-white/10 bg-gradient-to-b from-white/5 to-transparent backdrop-blur-xl shadow-[0_0_30px_rgba(255,255,255,0.05)] transition-all duration-500 hover:shadow-[0_0_45px_rgba(255,255,255,0.08)]">
+        {/* Others Column (No changes to this parent div) */}
+        <div
+          className="
+            rounded-2xl border border-white/10 
+            bg-gradient-to-b from-white/5 to-transparent 
+            shadow-[0_0_30px_rgba(255,255,255,0.05)] 
+            transition-transform duration-500 ease-in-out
+            hover:scale-[1.02]
+          "
+        >
           <div className="divide-y divide-white/10">
             {othersPoints.map((point, index) => (
               <div
                 key={index}
                 className={`
-                  flex items-center gap-3 px-8 py-5 transition-all duration-400 ease-out
+                  flex items-center gap-3 px-8 py-5 
                   hover:bg-white/5
+                  {/* REMOVED: transition-colors duration-400 ease-out */}
                   ${index === 0 ? "rounded-t-2xl" : ""}
                   ${index === othersPoints.length - 1 ? "rounded-b-2xl" : ""}
                 `}

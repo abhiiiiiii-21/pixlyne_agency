@@ -6,6 +6,7 @@ import { Mouse } from "lucide-react";
 import Image from "next/image";
 import React from "react";
 import Cta from "../CTA/Cta";
+import Pill from "./Pill";
 
 const Hero = () => {
   return (
@@ -32,7 +33,7 @@ const Hero = () => {
             data-cal-namespace="30min"
             data-cal-link="srijanpatel/30min"
             data-cal-config='{"layout":"month_view"}'
-            glowColor="#2667ff"
+            glowColor="#0055FE"
             backgroundColor="#0d0d0d"
             textColor="#ffffff"
             hoverTextColor="#ffffff"
@@ -47,15 +48,7 @@ const Hero = () => {
       <div className="absolute inset-0 flex flex-col justify-center items-center z-40 text-center px-4">
         {/* Section 1: Tagline Badge */}
         <div className="mb-9 mt-48">
-          <div className="relative inline-flex items-center justify-center rounded-[30px] bg-black p-[1px] shadow-lg">
-            <div className="relative backdrop-blur-[60px] bg-black/70 rounded-[24px] px-4 py-2 flex items-center justify-center gap-2 border border-white/10 shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
-              <span className="absolute left-3 h-[6px] w-[6px] rounded-full bg-[#2c74f9] shadow-[0_0_14px_2px_#2c74f9] animate-pulse" />
-              <p className="text-neutral-200 text-xs font-medium font-raleway z-10 pl-4 tracking-wide">
-                Crafting Unique Brand Identities
-              </p>
-              <div className="absolute inset-0 rounded-[24px] bg-[linear-gradient(105deg,rgba(255,255,255,0.1)_-20%,rgba(0,0,0,0)_25%)] pointer-events-none animate-[shine_2s_infinite]" />
-            </div>
-          </div>
+          <Pill/>
         </div>
 
         {/* Section 2: Headline */}
@@ -63,13 +56,13 @@ const Hero = () => {
           <h1 className="font-medium text-center font-raleway">
             <span className="block text-8xl tracking-tight leading-none">
               Shaping{" "}
-              <span className="italic text-blue-500 font-instrument-serif">
+              <span className="italic text-[#0055FE] font-instrument-serif">
                 Brands
               </span>
             </span>
             <span className="block text-8xl tracking-tight leading-none mt-2">
               With Every{" "}
-              <span className="italic text-blue-500 font-instrument-serif">
+              <span className="italic text-[#0055FE] font-instrument-serif">
                 Frame
               </span>
             </span>
@@ -80,7 +73,7 @@ const Hero = () => {
           <div className="flex items-center justify-center gap-3 text-neutral-300">
             <p>Scroll down</p>
             <div className="w-40 h-px bg-white/30"></div>
-            <Mouse className="animate-smoothFloat" fill="grey" />
+            <Mouse className="animate-smoothFloat" fill="#0055FE" />
             <div className="w-40 h-px bg-white/30"></div>
             <p>to see projects</p>
           </div>

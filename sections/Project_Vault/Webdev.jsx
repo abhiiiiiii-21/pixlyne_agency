@@ -24,7 +24,7 @@ const itemVariants = {
   hidden: {
     opacity: 0,
     scale: 1.05, // <-- START at 1.5
-    y: 0,  
+    y: 0,
   },
   visible: {
     opacity: 1,
@@ -72,7 +72,7 @@ const Webdev = () => {
       initial="hidden"
       whileInView="visible"
       viewport={{ amount: 0.1, once: true }}
- // Animation triggers once when 10% of the container is visible
+    // Animation triggers once when 10% of the container is visible
     >
       {web_development.map(({ title, video, websiteLink, thumbnail }, index) => {
         const videoRef = useRef(null)
@@ -116,12 +116,12 @@ const Webdev = () => {
                 muted
                 playsInline
                 preload="none"
-                className="object-cover rounded-md border border-neutral-800 w-full h-56 transition-transform duration-300 group-hover:scale-105"
+                className="object-cover rounded-md border border-neutral-800 w-full h-56 transition-transform duration-300"
               />
             </div>
 
             {/* Title section */}
-            <div className="flex justify-center items-center h-full z-10">
+            <div className="flex justify-center items-center h-full z-10 font-raleway">
               <p className="flex items-center gap-2 text-neutral-100 p-4 text-sm transition-all duration-300">
                 {title}
                 <CircleChevronRight
